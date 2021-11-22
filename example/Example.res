@@ -4,7 +4,7 @@ type example = {username: string};
 let socket =
   Socket.make(
     "/socket",
-    Some(Socket.options(~transport=`longpoll, ~params={username: "test"}, ())),
+    Some(Socket.options(~transport=#longpoll, ~params={username: "test"}, ())),
   );
 
 let _ = Socket.onOpen(socket, () => {Js.log("Socket connection open.")});
@@ -52,13 +52,14 @@ let presence = PresenceMod.make(channel, None);
 open PresenceMod;
 
 presence->onJoin((~id, ~currentPresence, ~newPresence) => {
+
   Js.log(id);
   switch (unwrap(currentPresence), unwrap(newPresence)) {
   | (None, None) => Js.log("No presences!")
   | (None, Some({id: userId, phx_ref: _})) =>
-    Js.log({j|New user: $userId|j})
+    Js.log(j`New user: $userId`)
   | (Some({id: userId, phx_ref}), Some(_)) =>
-    Js.log({j| User $userId logged from a new device: $phx_ref"|j})
+    Js.log(j`User $userId logged from a new device: $phx_ref"`)
   | _ => Js.log("Something ins very, very wrong around here.")
   };
 });

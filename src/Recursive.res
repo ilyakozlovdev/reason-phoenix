@@ -9,7 +9,7 @@ module rec Push: {
 and Channel: {
   type t
   type ref
-  @send external make: (Socket.t, string, 'a) => Push.t = "channel"
+  @send external make: (Socket.t, string, 'a) => Channel.t = "channel"
   @send external join: (Channel.t, ~timeout: int=?, unit) => Push.t = "join"
   @send
   external push: (Channel.t, ~event: string, ~payload: 'a, ~timeout: int=?, unit) => Push.t = "push"
