@@ -2,9 +2,9 @@
   "name": "reason-phoenix",
   "version": "0.1.8",
   "scripts": {
-    "build": "bsb -make-world",
-    "start": "bsb -make-world -w",
-    "clean": "bsb -clean-world"
+    "build": "rescript build",
+    "start": "rescript build -w",
+    "clean": "rescript "
   },
   "keywords": [
     "BuckleScript"
@@ -12,7 +12,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^8.2.0"
+    "bs-platform": "^8.2.0",
+    "rescript": "^9.1.4"
   },
   "dependencies": {
     "phoenix": "^1.5.4"
