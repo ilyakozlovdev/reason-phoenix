@@ -1,5 +1,5 @@
 {
-  "name": "rescript-phoenix",
+  "name": "rescript-phoenixjs",
   "version": "1.6.2",
   "sources": {
     "dir" : "src",
@@ -13,6 +13,5 @@
   "bs-dependencies": [],
   "warnings": {
     "error" : "+101"
-  },
-  "reason": { "react-jsx": 3 }
+  }
 }

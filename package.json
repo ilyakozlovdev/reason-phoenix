@@ -1,5 +1,5 @@
 {
-  "name": "rescript-phoenix",
+  "name": "rescript-phoenixjs",
   "version": "1.6.2",
   "scripts": {
     "build": "rescript build",
@@ -17,10 +17,11 @@
     "rescript": "^9.1.4"
   },
   "dependencies": {
+    "npmrc": "^1.1.1",
     "phoenix": "^1.5.4"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ilyakozlovdev/rescript-phoenix.git"
+    "url": "https://github.com/ilyakozlovdev/rescript-phoenixjs.git"
   }
 }
