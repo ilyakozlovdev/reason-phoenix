@@ -1,6 +1,6 @@
 {
   "name": "rescript-phoenixjs",
-  "version": "1.6.2",
+  "version": "1.6.2-fix1",
   "scripts": {
     "build": "rescript build",
     "start": "rescript build -w",

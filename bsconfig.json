@@ -1,13 +1,21 @@
 {
   "name": "rescript-phoenixjs",
-  "version": "1.6.2",
-  "sources": {
-    "dir" : "src",
-    "subdirs" : true
-  },
+  "namespace": "Phoenix",
+  "version": "1.6.6-alpha",
+  "sources": [
+    {
+      "dir" : "src",
+      "subdirs" : true
+    },
+    {
+      "dir": "example",
+      "subdirs": false,
+      "type": "dev"
+    }
+  ],
   "package-specs": {
-    "module": "es6",
-    "in-source": true
+    "module": "commonjs",
+    "in-source": false
   },
   "suffix": ".bs.js",
   "bs-dependencies": [],
