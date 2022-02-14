@@ -2,15 +2,10 @@
 # yarn lockfile v1
 
 
-bs-platform@^8.2.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-8.2.0.tgz#f3f4c06d5710a4c782f0ed030b1fe11e74a0a6d7"
-  integrity sha512-quvmUac/ZxGDsT7L5+6RNXrLPvLHkWFownacaqlwVoyAm770bPyupTRU49ALPGk3HpjfD5eE+lpGdOSPtuwJiA==
-
-phoenix@^1.5.4:
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/phoenix/-/phoenix-1.5.4.tgz#d42bb537f03f55076b4e7a6757fe29318a8439f0"
-  integrity sha512-mTxseCKWDgrBQRIriqzvxL+QH5xruu6KQPqFdDx0jrdu/nqWCo914MLihVksn7SV2Bol3T+e/VtovJgC5UZT+w==
+phoenix@^1.6.6:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/phoenix/-/phoenix-1.6.6.tgz#16b578e36361d238707a66bf235e3f59ff3fb298"
+  integrity sha512-KLNHVlrZH8UAoEzeCS1XBI9z5juWz0gZ/+No7j5p/byVINnd+del9H5vtBMzQgZa3ZcUjVVZcQR8bKdnH/FmMg==
 
 rescript@^9.1.4:
   version "9.1.4"
