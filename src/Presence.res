@@ -46,7 +46,7 @@ module MakeModule = (Presence: PresenceModule) => {
 
   @set external onLeave: (t, presenceCallback) => unit = "onLeave";
   @set external onJoin: (t, presenceCallback) => unit = "onJoin";
-  @set external list: (presences, unit => unit) => presences = "syncState"
+  @set external list: (presences, unit => unit) => presences = "list"
 
   let unwrap = presence => {
     presence.metas->Belt.Array.get(0);
