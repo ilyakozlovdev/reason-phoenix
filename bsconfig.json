@@ -3,15 +3,8 @@
   "namespace": "Phoenix",
   "version": "1.6.6-alpha",
   "sources": [
-    {
-      "dir" : "src",
-      "subdirs" : true
-    },
-    {
-      "dir": "example",
-      "subdirs": false,
-      "type": "dev"
-    }
+    {"dir" : "src", "subdirs" : true},
+    {"dir": "example", "subdirs": false, "type": "dev"}
   ],
   "package-specs": {
     "module": "commonjs",
