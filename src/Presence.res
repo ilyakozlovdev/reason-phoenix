@@ -1,37 +1,54 @@
-type t
+module type PresenceModule = {type t;};
 
-type presence = {metas: array<Presence.t>}
+module MakeModule = (Presence: PresenceModule) => {
+  type t;
 
-type presences = Js.Dict.t<presence>
+  type presence = {metas: array<Presence.t>};
 
-type diff = {
-  joins: presences,
-  leaves: presences,
-}
+  type presences = Js.Dict.t<presence>;
 
-type presenceCallback = (~id: string, ~currentPresence: presence, ~newPresence: presence) => unit
+  type diff = {
+    joins: presences,
+    leaves: presences,
+  };
 
-type presenceOpts = {
-  state: string,
-  diff: string,
-}
+  type presenceCallback =
+    (~id: string, ~currentPresence: presence, ~newPresence: presence) => unit;
 
-@module("phoenix") @new external make: (Recursive.Channel.t, option<presenceOpts>) => t = "Presence"
+  type presenceOpts = {
+    state: string,
+    diff: string,
+  };
 
-@send
-external syncDiff: (
-  ~currentState: presences,
-  ~diff: diff,
-  ~onJoin: presenceCallback=?,
-  ~onLeave: presenceCallback=?,
-  unit,
-) => presences = "syncDiff"
+  @new external make: (Recursive.Channel.t, option<presenceOpts>) => t = "Presence"
 
-@send
-external syncState: (
-  ~currentState: presences,
-  ~newState: presences,
-  ~onJoin: presenceCallback=?,
-  ~onLeave: presenceCallback=?,
-  unit,
-) => presences = "syncState"
+  @scope("Presence") @val external syncDiff: 
+    (
+      ~currentState: presences,
+      ~diff: diff,
+      ~onJoin: presenceCallback=?,
+      ~onLeave: presenceCallback=?,
+      unit
+    ) =>
+    presences =
+    "syncDiff";
+
+  @scope("Presence") @val external syncState:
+    (
+      ~currentState: presences,
+      ~newState: presences,
+      ~onJoin: presenceCallback=?,
+      ~onLeave: presenceCallback=?,
+      unit
+    ) =>
+    presences =
+    "syncState";
+
+  @set external onLeave: (t, presenceCallback) => unit = "onLeave";
+  @set external onJoin: (t, presenceCallback) => unit = "onJoin";
+  @set external list: (presences, unit => unit) => presences = "syncState"
+
+  let unwrap = presence => {
+    presence.metas->Belt.Array.get(0);
+  };
+};
