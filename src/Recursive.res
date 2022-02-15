@@ -49,7 +49,7 @@ and Channel: {
   external push: (Channel.t, ~event: string, ~payload: 'a, ~timeout: int=?, unit) => Push.t = "push"
   @send external leave: (Channel.t, ~timeout: int=?, unit) => Push.t = "leave"
   @send external on: (Channel.t, string, 'a => unit) => ref = "on"
-  @send external off: (Channel.t, string, ref) => unit = "off"
+  @send external off: (Channel.t, string, ~ref: ref=?, unit) => unit = "off"
   @send external onClose: (Channel.t, unit => unit) => unit = "onClose"
   @send external onError: (Channel.t, 'a => unit) => unit = "onError"
   @send external onMessage: (Channel.t, string, 'a, ref) => 'a = "onMessage"
